@@ -22,7 +22,22 @@ public class MyFirstJavaGame extends Applet {
 			int width = getWidth();
 			int height = getHeight();
 			
+			
 			System.out.println("The screen width is: " + width);
 			System.out.println("The screen height is: " + height);
+			g.setColor(Color.BLUE);
+			g.fillRect(0, 0, 800, 500);
+			
+			g.setColor(Color.YELLOW);
+			g.fillRect(0, 0, 800/12, 500/8);
+			
+			g.setColor(Color.YELLOW);
+			g.fillRect(800-(800/12), 0, 800/12, 500/8);
+			
+			g.setColor(Color.YELLOW);
+			g.fillRect(0, 500-(500/8), 800/12, 500/8);
+			
+			g.setColor(Color.YELLOW);
+			g.fillRect(800-(800/12), 500-(500/8), 800/12, 500/8);
 	   }
 }
