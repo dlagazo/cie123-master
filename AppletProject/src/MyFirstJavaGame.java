@@ -1,6 +1,8 @@
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /***
  * 
@@ -13,8 +15,12 @@ import java.awt.Graphics;
  */
 
 
-public class MyFirstJavaGame extends Applet {
+public class MyFirstJavaGame extends Applet implements MouseListener  {
 	
+	public void init()
+	{
+		addMouseListener(this);
+	}
 	
 	public void paint (Graphics g)
 	   {
@@ -40,4 +46,38 @@ public class MyFirstJavaGame extends Applet {
 			g.setColor(Color.YELLOW);
 			g.fillRect(800-(800/12), 500-(500/8), 800/12, 500/8);
 	   }
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("X coordinate: " + e.getX());
+		System.out.println("Y coordinate: " + e.getY());
+		if((e.getX() >= 0) && (e.getY()>=0)  && (e.getX() <= (800/12)) && (e.getY() <= (500/8)))
+			System.out.println("Yellow box top left corner is clicked");
+		else if((e.getX() >= (800/12*11)) && (e.getY()>=0)  && (e.getX() <= 800) && (e.getY() <= (500/8)))
+			System.out.println("Yellow box top right corner is clicked");
+		else if((e.getX() >= 0) && (e.getY()>=(500/8*7))  && (e.getX() <= (800/12)) && (e.getY() <= 500))
+			System.out.println("Yellow box bottom left corner is clicked");
+		else if((e.getX() >= (800/12*11)) && (e.getY()>=(500/8*7))  && (e.getX() <= 800) && (e.getY() <= (500/8)))
+			System.out.println("Yellow box bottom right corner is clicked");
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
